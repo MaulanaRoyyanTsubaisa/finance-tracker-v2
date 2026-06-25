@@ -239,7 +239,7 @@ export default function SettingsPage() {
                 className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center cursor-pointer shadow-md hover:scale-105 transition-transform"
                 aria-label={lang === "id" ? "Ubah foto" : "Change photo"}
               >
-                {uploadingAvatar ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Camera className="w-3.5 h-3.5" />}
+                {uploadingAvatar ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <span className="text-[14px]">📷</span>}
               </label>
               <input
                 id="avatar-upload"
@@ -281,12 +281,12 @@ export default function SettingsPage() {
                     className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={lang === "id" ? "Edit nama" : "Edit name"}
                   >
-                    <Pencil className="w-3.5 h-3.5" />
+                    <span className="text-[12px]">✏️</span>
                   </button>
                 </div>
               )}
               <p className="text-xs text-muted-foreground flex items-center gap-1 truncate mt-1">
-                <Mail className="w-3 h-3 shrink-0" />
+                <span className="shrink-0 text-[12px]">✉️</span>
                 <span className="truncate">{accountSubtitle}</span>
               </p>
             </div>
@@ -296,7 +296,7 @@ export default function SettingsPage() {
         {/* Preferences */}
         <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <Sparkles className="w-4 h-4" />
+            <span>✨</span>
             {lang === "id" ? "Preferensi" : "Preferences"}
           </h3>
 
@@ -304,7 +304,7 @@ export default function SettingsPage() {
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                <Globe className="w-4 h-4 text-muted-foreground" />
+                <span>🌐</span>
               </div>
               <div>
                 <p className="font-semibold text-sm">{t("language")}</p>
@@ -326,7 +326,7 @@ export default function SettingsPage() {
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                {theme === "dark" ? <Moon className="w-4 h-4 text-muted-foreground" /> : <Sun className="w-4 h-4 text-muted-foreground" />}
+                {theme === "dark" ? <span>🌙</span> : <span>☀️</span>}
               </div>
               <div>
                 <p className="font-semibold text-sm">{theme === "dark" ? t("darkMode") : t("lightMode")}</p>
@@ -340,7 +340,7 @@ export default function SettingsPage() {
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                <DollarSign className="w-4 h-4 text-muted-foreground" />
+                <span>💲</span>
               </div>
               <div>
                 <p className="font-semibold text-sm">{t("currency")}</p>
@@ -365,14 +365,14 @@ export default function SettingsPage() {
         {/* Reminder */}
         <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <Bell className="w-4 h-4" />
+            <span>🔔</span>
             {lang === "id" ? "Notifikasi" : "Notifications"}
           </h3>
 
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                {reminder.enabled ? <Bell className="w-4 h-4 text-muted-foreground" /> : <BellOff className="w-4 h-4 text-muted-foreground" />}
+                {reminder.enabled ? <span>🔔</span> : <span>🔕</span>}
               </div>
               <div>
                 <p className="font-semibold text-sm">{lang === "id" ? "Reminder Harian" : "Daily Reminder"}</p>
@@ -423,7 +423,7 @@ export default function SettingsPage() {
         {/* Account */}
         <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <User className="w-4 h-4" />
+            <span>👤</span>
             {lang === "id" ? "Akun" : "Account"}
           </h3>
           {guest && (
@@ -431,7 +431,7 @@ export default function SettingsPage() {
               <AlertDialogTrigger asChild>
                 <button className="w-full flex items-center gap-3 px-4 py-3 border-t border-border/50 hover:bg-muted/50 transition-colors text-left">
                   <div className="w-9 h-9 rounded-lg bg-destructive/10 flex items-center justify-center">
-                    <Trash2 className="w-4 h-4 text-destructive" />
+                    <span>🗑️</span>
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-destructive">
@@ -481,7 +481,7 @@ export default function SettingsPage() {
             className="w-full flex items-center gap-3 px-4 py-3 border-t border-border/50 hover:bg-muted/50 transition-colors text-left"
           >
             <div className="w-9 h-9 rounded-lg bg-destructive/10 flex items-center justify-center">
-              <LogOut className="w-4 h-4 text-destructive" />
+              <span>🚪</span>
             </div>
             <div>
               <p className="font-semibold text-sm text-destructive">
