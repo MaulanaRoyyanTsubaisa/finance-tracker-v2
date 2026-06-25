@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 340 15% 97%;
     --foreground: 240 10% 15%;
 
-    --card: 0 0% 100%;
+    --card: 340 15% 97%;
     --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
@@ -54,8 +54,8 @@
     --gradient-income: linear-gradient(135deg, hsl(150 50% 65%), hsl(150 40% 75%));
     --gradient-expense: linear-gradient(135deg, hsl(340 50% 75%), hsl(340 40% 85%));
 
-    --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.04);
-    --shadow-card: 0 4px 20px -5px rgba(0,0,0,0.03);
+    --shadow-soft: 8px 8px 16px rgba(0,0,0,0.05), -8px -8px 16px rgba(255,255,255,0.8), inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.02);
+    --shadow-card: 6px 6px 12px rgba(0,0,0,0.04), -6px -6px 12px rgba(255,255,255,0.8), inset 2px 2px 4px rgba(255,255,255,0.6), inset -2px -2px 4px rgba(0,0,0,0.02);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -104,6 +104,9 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 5% 20%;
     --sidebar-ring: 340 40% 65%;
+    
+    --shadow-soft: 8px 8px 16px rgba(0,0,0,0.4), -8px -8px 16px rgba(255,255,255,0.02), inset 2px 2px 4px rgba(255,255,255,0.05), inset -2px -2px 4px rgba(0,0,0,0.2);
+    --shadow-card: 6px 6px 12px rgba(0,0,0,0.3), -6px -6px 12px rgba(255,255,255,0.02), inset 2px 2px 4px rgba(255,255,255,0.03), inset -2px -2px 4px rgba(0,0,0,0.15);
   }
 }
 
@@ -118,7 +121,10 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/80 backdrop-blur-lg border border-border/50 shadow-soft rounded-2xl;
+    @apply bg-card/60 backdrop-blur-xl border border-white/20 shadow-soft rounded-2xl;
+  }
+  .clay-card {
+    @apply bg-card shadow-card rounded-2xl;
   }
   .gradient-hero {
     background: var(--gradient-hero);
