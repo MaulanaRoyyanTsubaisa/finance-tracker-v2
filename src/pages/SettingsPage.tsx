@@ -296,16 +296,12 @@ export default function SettingsPage() {
         {/* Preferences */}
         <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <span>✨</span>
             {lang === "id" ? "Preferensi" : "Preferences"}
           </h3>
 
           {/* Language */}
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                <span>🌐</span>
-              </div>
               <div>
                 <p className="font-semibold text-sm">{t("language")}</p>
                 <p className="text-xs text-muted-foreground">{lang === "id" ? "Bahasa Indonesia" : "English"}</p>
@@ -325,9 +321,6 @@ export default function SettingsPage() {
           {/* Theme */}
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                {theme === "dark" ? <span>🌙</span> : <span>☀️</span>}
-              </div>
               <div>
                 <p className="font-semibold text-sm">{theme === "dark" ? t("darkMode") : t("lightMode")}</p>
                 <p className="text-xs text-muted-foreground">{lang === "id" ? "Ubah tampilan tema" : "Switch app theme"}</p>
@@ -339,9 +332,6 @@ export default function SettingsPage() {
           {/* Currency */}
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                <span>💲</span>
-              </div>
               <div>
                 <p className="font-semibold text-sm">{t("currency")}</p>
                 <p className="text-xs text-muted-foreground">{currency.symbol} {currency.name}</p>
@@ -363,17 +353,13 @@ export default function SettingsPage() {
         </section>
 
         {/* Reminder */}
-        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
+        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden mt-4">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <span>🔔</span>
             {lang === "id" ? "Notifikasi" : "Notifications"}
           </h3>
 
           <div className="flex items-center justify-between px-4 py-3 border-t border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center">
-                {reminder.enabled ? <span>🔔</span> : <span>🔕</span>}
-              </div>
               <div>
                 <p className="font-semibold text-sm">{lang === "id" ? "Reminder Harian" : "Daily Reminder"}</p>
                 <p className="text-xs text-muted-foreground">{lang === "id" ? "Pengingat catat pengeluaran" : "Remind to log expenses"}</p>
@@ -421,18 +407,14 @@ export default function SettingsPage() {
         </section>
 
         {/* Account */}
-        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
+        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden mt-4">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
-            <span>👤</span>
             {lang === "id" ? "Akun" : "Account"}
           </h3>
           {guest && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <button className="w-full flex items-center gap-3 px-4 py-3 border-t border-border/50 hover:bg-muted/50 transition-colors text-left">
-                  <div className="w-9 h-9 rounded-lg bg-destructive/10 flex items-center justify-center">
-                    <span>🗑️</span>
-                  </div>
                   <div>
                     <p className="font-semibold text-sm text-destructive">
                       {lang === "id" ? "Reset Data" : "Reset Data"}
@@ -480,9 +462,6 @@ export default function SettingsPage() {
             }}
             className="w-full flex items-center gap-3 px-4 py-3 border-t border-border/50 hover:bg-muted/50 transition-colors text-left"
           >
-            <div className="w-9 h-9 rounded-lg bg-destructive/10 flex items-center justify-center">
-              <span>🚪</span>
-            </div>
             <div>
               <p className="font-semibold text-sm text-destructive">
                 {guest
