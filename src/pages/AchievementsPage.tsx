@@ -21,7 +21,7 @@ export default function AchievementsPage({ store }: { store: ReturnType<typeof u
   return (
     <div className="min-h-screen bg-background pb-24">
       <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-xl px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate("/")} className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center">
+        <button onClick={() => navigate("/")} className="w-10 h-10 btn-clay bg-muted flex items-center justify-center">
           <ArrowLeft className="w-5 h-5" />
         </button>
         <h1 className="font-extrabold text-lg">{t("achievementsTitle")}</h1>
@@ -43,7 +43,7 @@ export default function AchievementsPage({ store }: { store: ReturnType<typeof u
           )}
         </div>
 
-        <div className="p-4 rounded-2xl bg-card shadow-card">
+        <div className="clay-card p-4">
           <h3 className="font-bold text-sm mb-2">{t("howToEarnXp")}</h3>
           <div className="space-y-1 text-xs text-muted-foreground">
             <p>{t("xpIncome")}</p>
@@ -58,7 +58,7 @@ export default function AchievementsPage({ store }: { store: ReturnType<typeof u
             {BADGES.map((badge, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-3 p-3 rounded-2xl shadow-card animate-fade-in ${
+                className={`flex items-center gap-3 p-3 clay-card animate-fade-in ${
                   badge.earned ? "bg-card" : "bg-muted/50 opacity-60"
                 }`}
                 style={{ animationDelay: `${i * 80}ms` }}

@@ -101,7 +101,7 @@ export default function AuthPage() {
             <button
               onClick={handleGoogleLogin}
               disabled={loading}
-              className="w-full py-3 rounded-2xl bg-card shadow-card font-bold text-sm flex items-center justify-center gap-2 hover:shadow-soft transition-shadow disabled:opacity-50"
+              className="w-full py-3 btn-clay text-sm flex items-center justify-center gap-2 disabled:opacity-50"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
@@ -129,7 +129,7 @@ export default function AuthPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="kamu@email.com"
-              className="w-full px-4 py-3 rounded-2xl bg-card shadow-card text-sm outline-none focus:ring-2 ring-primary"
+              className="w-full px-4 py-3 input-clay text-sm"
               required
             />
           </div>
@@ -141,7 +141,7 @@ export default function AuthPage() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder={t("minChars")}
-                className="w-full px-4 py-3 rounded-2xl bg-card shadow-card text-sm outline-none focus:ring-2 ring-primary"
+                className="w-full px-4 py-3 input-clay text-sm"
                 required
                 minLength={6}
               />
@@ -157,7 +157,7 @@ export default function AuthPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-2xl gradient-hero text-primary-foreground font-extrabold text-base shadow-soft active:scale-[0.98] transition-transform disabled:opacity-50"
+            className="w-full py-4 btn-clay gradient-hero text-primary-foreground text-base disabled:opacity-50"
           >
             {loading ? t("loading") : isForgot ? t("sendReset") : isLogin ? t("login") : t("register")}
           </button>
@@ -166,7 +166,7 @@ export default function AuthPage() {
         {!isForgot && (
           <button
             onClick={handleGuest}
-            className="w-full py-3 rounded-2xl border border-border bg-transparent font-bold text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            className="w-full py-3 btn-clay text-sm text-muted-foreground"
           >
             {lang === "id" ? "Lanjut sebagai Tamu 👻" : "Continue as Guest 👻"}
           </button>

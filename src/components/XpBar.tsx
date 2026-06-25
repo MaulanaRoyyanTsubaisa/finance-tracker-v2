@@ -6,7 +6,7 @@ export default function XpBar({ xp }: { xp: number }) {
   const { t } = useLanguage();
 
   return (
-    <div className="p-4 rounded-2xl bg-card shadow-card animate-fade-in">
+    <div className="clay-card p-4 animate-fade-in">
       <div className="flex items-center justify-between mb-2">
         <div>
           <span className="text-xs text-muted-foreground font-medium">{t("level")}</span>

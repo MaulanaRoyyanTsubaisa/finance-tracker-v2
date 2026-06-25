@@ -62,7 +62,7 @@ export default function ResetPasswordPage() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder={t("minChars")}
-              className="w-full px-4 py-3 rounded-2xl bg-card shadow-card text-sm outline-none focus:ring-2 ring-primary"
+              className="w-full px-4 py-3 input-clay text-sm"
               required
               minLength={6}
             />
@@ -74,7 +74,7 @@ export default function ResetPasswordPage() {
               value={confirmPassword}
               onChange={e => setConfirmPassword(e.target.value)}
               placeholder={t("retypePassword")}
-              className="w-full px-4 py-3 rounded-2xl bg-card shadow-card text-sm outline-none focus:ring-2 ring-primary"
+              className="w-full px-4 py-3 input-clay text-sm"
               required
               minLength={6}
             />
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-2xl gradient-hero text-primary-foreground font-extrabold text-base shadow-soft active:scale-[0.98] transition-transform disabled:opacity-50"
+            className="w-full py-4 btn-clay gradient-hero text-primary-foreground text-base disabled:opacity-50"
           >
             {loading ? t("loading") : t("changePassword")}
           </button>

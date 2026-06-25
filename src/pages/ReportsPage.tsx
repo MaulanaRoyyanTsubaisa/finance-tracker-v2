@@ -29,20 +29,20 @@ export default function ReportsPage({ store }: { store: ReturnType<typeof useFin
   return (
     <div className="min-h-screen bg-background pb-24">
       <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-xl px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate("/")} className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center">
+        <button onClick={() => navigate("/")} className="w-10 h-10 btn-clay bg-muted flex items-center justify-center">
           <ArrowLeft className="w-5 h-5" />
         </button>
         <h1 className="font-extrabold text-lg flex-1">{t("monthlyReport")}</h1>
         <div className="flex gap-1">
           <button
             onClick={() => exportToCSV(store.transactions, "transactions.csv")}
-            className="px-3 py-2 rounded-xl bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
+            className="px-3 py-2 btn-clay bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
           >
             CSV
           </button>
           <button
             onClick={() => exportToPDF(store.transactions, { totalIncome: store.totalIncome, totalExpense: store.totalExpense, balance: store.balance })}
-            className="px-3 py-2 rounded-xl bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
+            className="px-3 py-2 btn-clay bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
           >
             PDF
           </button>
@@ -61,7 +61,7 @@ export default function ReportsPage({ store }: { store: ReturnType<typeof useFin
           </div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-card shadow-card">
+        <div className="clay-card p-4">
           <p className="text-xs text-muted-foreground">{t("savings")}</p>
           <p className="text-2xl font-extrabold text-success">{formatMoney(store.balance)}</p>
           <p className="text-xs text-muted-foreground mt-1">({savingsRate}% {t("savingsRate")})</p>
@@ -71,7 +71,7 @@ export default function ReportsPage({ store }: { store: ReturnType<typeof useFin
           <h3 className="font-bold text-sm mb-3">{t("realityCheck")}</h3>
           <div className="space-y-2">
             {insights.map((insight, i) => (
-              <div key={i} className="p-3 rounded-2xl bg-card shadow-card text-sm font-medium animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={i} className="p-3 clay-card text-sm font-medium animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
                 {insight}
               </div>
             ))}
@@ -82,7 +82,7 @@ export default function ReportsPage({ store }: { store: ReturnType<typeof useFin
           <h3 className="font-bold text-sm mb-3">{t("spendingByCategory")}</h3>
           <div className="space-y-2">
             {categoryData.map((cat, i) => (
-              <div key={cat.name} className="flex items-center gap-3 p-3 rounded-2xl bg-card shadow-card animate-fade-in" style={{ animationDelay: `${i * 60}ms` }}>
+              <div key={cat.name} className="flex items-center gap-3 p-3 clay-card animate-fade-in" style={{ animationDelay: `${i * 60}ms` }}>
                 <span className="flex-1 font-semibold text-sm">{cat.name}</span>
                 <span className="font-bold text-sm">{formatMoney(cat.value)}</span>
               </div>

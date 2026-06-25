@@ -212,7 +212,7 @@ export default function SettingsPage() {
       <div className="px-4 pt-6 pb-4 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center"
+          className="w-10 h-10 btn-clay bg-muted flex items-center justify-center"
           aria-label={t("back")}
         >
           <ArrowLeft className="w-5 h-5 text-muted-foreground" />
@@ -225,7 +225,7 @@ export default function SettingsPage() {
 
       <div className="px-4 space-y-4">
         {/* Profile Card */}
-        <section className="rounded-2xl bg-card border border-border/50 p-4 shadow-sm">
+        <section className="clay-card p-4">
           <div className="flex items-center gap-4">
             <div className="relative">
               <Avatar className="w-16 h-16 ring-2 ring-border">
@@ -257,17 +257,17 @@ export default function SettingsPage() {
                     value={nameDraft}
                     onChange={(e) => setNameDraft(e.target.value)}
                     placeholder={lang === "id" ? "Nama tampilan" : "Display name"}
-                    className="h-9"
+                    className="h-9 input-clay px-3"
                     maxLength={50}
                     autoFocus
                   />
-                  <Button size="icon" className="h-9 w-9 shrink-0" onClick={handleSaveName} disabled={savingName}>
+                  <Button size="icon" className="h-9 w-9 shrink-0 btn-clay" onClick={handleSaveName} disabled={savingName}>
                     {savingName ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
                   </Button>
                   <Button
                     size="icon"
                     variant="outline"
-                    className="h-9 w-9 shrink-0"
+                    className="h-9 w-9 shrink-0 btn-clay"
                     onClick={() => { setEditingName(false); setNameDraft(profile.display_name ?? ""); }}
                   >
                     <X className="w-4 h-4" />
@@ -278,7 +278,7 @@ export default function SettingsPage() {
                   <p className="font-bold text-base truncate">{displayName}</p>
                   <button
                     onClick={() => { setNameDraft(profile.display_name ?? displayName); setEditingName(true); }}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="px-3 py-1.5 btn-clay bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
                     aria-label={lang === "id" ? "Edit nama" : "Edit name"}
                   >
                     <span className="text-[12px]">✏️</span>
@@ -294,7 +294,7 @@ export default function SettingsPage() {
         </section>
 
         {/* Preferences */}
-        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden">
+        <section className="clay-card overflow-hidden">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
             {lang === "id" ? "Preferensi" : "Preferences"}
           </h3>
@@ -353,7 +353,7 @@ export default function SettingsPage() {
         </section>
 
         {/* Reminder */}
-        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden mt-4">
+        <section className="clay-card overflow-hidden mt-4">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
             {lang === "id" ? "Notifikasi" : "Notifications"}
           </h3>
@@ -382,7 +382,7 @@ export default function SettingsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full"
+                className="w-full btn-clay"
                 onClick={() => {
                   if (permission !== "granted") {
                     toast.error(lang === "id" ? "Aktifkan reminder dulu" : "Enable reminder first");
@@ -407,7 +407,7 @@ export default function SettingsPage() {
         </section>
 
         {/* Account */}
-        <section className="rounded-2xl bg-card border border-border/50 overflow-hidden mt-4">
+        <section className="clay-card overflow-hidden mt-4">
           <h3 className="font-bold text-sm px-4 pt-4 pb-2 text-muted-foreground flex items-center gap-2">
             {lang === "id" ? "Akun" : "Account"}
           </h3>

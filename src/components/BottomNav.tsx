@@ -16,8 +16,8 @@ export default function BottomNav() {
   const { t } = useLanguage();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-t border-border/50 pb-safe">
-      <div className="grid grid-cols-5 items-center px-2 pt-1 pb-1 max-w-lg mx-auto">
+    <nav className="fixed bottom-4 left-4 right-4 z-50 clay-card max-w-md mx-auto">
+      <div className="grid grid-cols-5 items-center px-2 py-2">
         {NAV_ITEMS.map(item => {
           const active = location.pathname === item.path;
           if (item.isMain) {

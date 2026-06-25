@@ -98,14 +98,14 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
         <div className="flex gap-1">
           <button
             onClick={() => exportToCSV(filtered, "transactions.csv")}
-            className="px-3 py-2 rounded-xl bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
+            className="px-3 py-2 btn-clay bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
             title={t("exportCSV")}
           >
             CSV
           </button>
           <button
             onClick={() => exportToPDF(filtered, { totalIncome: store.totalIncome, totalExpense: store.totalExpense, balance: store.balance })}
-            className="px-3 py-2 rounded-xl bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
+            className="px-3 py-2 btn-clay bg-muted text-xs font-bold text-muted-foreground hover:text-foreground transition-colors"
             title={t("exportPDF")}
           >
             PDF
@@ -120,7 +120,7 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
               key={p}
               onClick={() => { setPeriod(p); setMonthOffset(0); if (p !== "custom") setCustomDate(undefined); }}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                period === p ? "bg-primary text-primary-foreground shadow-soft" : "bg-muted text-muted-foreground"
+                period === p ? "bg-primary text-primary-foreground btn-clay shadow-none" : "btn-clay bg-muted text-muted-foreground"
               }`}
             >
               {p === "week" ? t("week") : p === "month" ? t("month") : p === "all" ? t("all") : t("dateFilter")}
@@ -132,7 +132,7 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
           <Popover>
             <PopoverTrigger asChild>
               <button className={cn(
-                "w-full flex items-center gap-2 px-4 py-3 rounded-2xl bg-card shadow-card text-sm font-medium",
+                "w-full flex items-center gap-2 px-4 py-3 btn-clay bg-card text-sm font-medium",
                 !customDate && "text-muted-foreground"
               )}>
                 <CalendarIcon className="w-4 h-4" />
@@ -184,7 +184,7 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
         ) : (
           <div className="space-y-2">
             {filtered.map((tx, i) => (
-              <div key={tx.id} className="p-3 rounded-2xl bg-card shadow-card animate-fade-in" style={{ animationDelay: `${i * 40}ms` }}>
+              <div key={tx.id} className="p-3 clay-card animate-fade-in" style={{ animationDelay: `${i * 40}ms` }}>
                 {editing?.id === tx.id ? (
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
@@ -198,24 +198,23 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
                     </div>
                     <div>
                       <label className="text-[10px] font-semibold text-muted-foreground mb-1 block">{t("nominal")}</label>
-                      <div className="flex items-center bg-muted rounded-xl px-3 py-2">
+                      <div className="flex items-center input-clay px-3 py-2">
                         <span className="text-muted-foreground text-xs font-bold mr-1">{currency.symbol}</span>
                         <input type="number" value={editing.amount} onChange={e => setEditing({ ...editing, amount: e.target.value })} className="flex-1 bg-transparent text-sm font-bold outline-none" min={1} />
                       </div>
                     </div>
                     <div>
                       <label className="text-[10px] font-semibold text-muted-foreground mb-1 block">{t("editDate")}</label>
-                      <input type="date" value={editing.date} onChange={e => setEditing({ ...editing, date: e.target.value })} className="w-full px-3 py-2 rounded-xl bg-muted text-sm font-medium outline-none" />
+                      <input type="date" value={editing.date} onChange={e => setEditing({ ...editing, date: e.target.value })} className="w-full px-3 py-2 input-clay text-sm font-medium outline-none" />
                     </div>
                     <div>
                       <label className="text-[10px] font-semibold text-muted-foreground mb-1 block">{t("editNotes")}</label>
-                      <input value={editing.notes} onChange={e => setEditing({ ...editing, notes: e.target.value })} className="w-full px-3 py-2 rounded-xl bg-muted text-sm outline-none" />
+                      <input value={editing.notes} onChange={e => setEditing({ ...editing, notes: e.target.value })} className="w-full px-3 py-2 input-clay text-sm outline-none" />
                     </div>
-                    <div className="flex gap-2">
-                      <button onClick={handleSaveEdit} className="flex-1 py-2 rounded-xl bg-success/20 text-success text-sm font-bold flex items-center justify-center gap-1">
+                      <button onClick={handleSaveEdit} className="flex-1 py-2 btn-clay bg-success/20 text-success text-sm flex items-center justify-center gap-1">
                         <Check className="w-4 h-4" /> {t("save")}
                       </button>
-                      <button onClick={() => setEditing(null)} className="flex-1 py-2 rounded-xl bg-muted text-muted-foreground text-sm font-bold flex items-center justify-center gap-1">
+                      <button onClick={() => setEditing(null)} className="flex-1 py-2 btn-clay bg-muted text-muted-foreground text-sm flex items-center justify-center gap-1">
                         <X className="w-4 h-4" /> {t("cancel")}
                       </button>
                     </div>

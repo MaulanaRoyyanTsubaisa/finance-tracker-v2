@@ -28,7 +28,7 @@ export default function ExpenseChart({ data }: Props) {
   const total = data.reduce((s, d) => s + d.value, 0);
 
   return (
-    <div className="p-4 rounded-2xl bg-card shadow-card animate-fade-in">
+    <div className="clay-card p-4 animate-fade-in">
       <h3 className="font-bold text-sm mb-3">{t("expenseBreakdown")}</h3>
       <div className="flex items-center gap-4">
         <div className="w-32 h-32">

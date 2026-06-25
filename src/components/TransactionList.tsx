@@ -27,7 +27,7 @@ export default function TransactionList({ transactions }: { transactions: Transa
       {transactions.slice(0, 8).map((tx, i) => (
         <div
           key={tx.id}
-          className="flex items-center gap-3 p-3 rounded-2xl bg-card shadow-card hover:shadow-soft transition-shadow animate-fade-in"
+          className="flex items-center gap-3 p-3 clay-card hover:shadow-soft transition-shadow animate-fade-in"
           style={{ animationDelay: `${i * 50}ms` }}
         >
           <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-lg">
