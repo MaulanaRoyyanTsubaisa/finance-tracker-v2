@@ -211,6 +211,7 @@ export default function HistoryPage({ store }: { store: ReturnType<typeof useFin
                       <label className="text-[10px] font-semibold text-muted-foreground mb-1 block">{t("editNotes")}</label>
                       <input value={editing.notes} onChange={e => setEditing({ ...editing, notes: e.target.value })} className="w-full px-3 py-2 input-clay text-sm outline-none" />
                     </div>
+                    <div className="flex gap-2">
                       <button onClick={handleSaveEdit} className="flex-1 py-2 btn-clay bg-success/20 text-success text-sm flex items-center justify-center gap-1">
                         <Check className="w-4 h-4" /> {t("save")}
                       </button>
